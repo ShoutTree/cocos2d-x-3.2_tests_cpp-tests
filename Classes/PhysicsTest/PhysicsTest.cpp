@@ -1455,7 +1455,11 @@ void PhysicsContactTest::resetTest()
     label->setPosition(Vec2(s.width/2, s.height-170));
     
     auto wall = Node::create();
-    wall->setPhysicsBody(PhysicsBody::createEdgeBox(VisibleRect::getVisibleRect().size, PhysicsMaterial(0.1f, 1, 0.0f)));
+	PhysicsBody* wallBody = PhysicsBody::createEdgeBox(VisibleRect::getVisibleRect().size, PhysicsMaterial(0.1f, 1, 0.0f));
+	wallBody->setTag(333);
+	wallBody->setDynamic(true);
+    wall->setPhysicsBody(wallBody);
+
     wall->setPosition(VisibleRect::center());
     root->addChild(wall);
     
@@ -1541,6 +1545,14 @@ bool PhysicsContactTest::onContactBegin(PhysicsContact& contact)
     PhysicsBody* a = contact.getShapeA()->getBody();
     PhysicsBody* b = contact.getShapeB()->getBody();
     PhysicsBody* body = (a->getCategoryBitmask() == 0x04 || a->getCategoryBitmask() == 0x08) ? a : b;
+
+	CCLOG("PhysicsContactTest::onContactBegin");
+
+	if(a->getTag() == 333 || b->getTag() == 333)
+	{
+		CCLOG("onContactBegin, contact wall");
+	}
+
     CC_UNUSED_PARAM(body);
     CC_ASSERT(body->getCategoryBitmask() == 0x04 || body->getCategoryBitmask() == 0x08);
     
