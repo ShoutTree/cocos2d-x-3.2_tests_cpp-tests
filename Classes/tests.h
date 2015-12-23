@@ -1,6 +1,8 @@
 #ifndef _TESTS_H_
 #define _TESTS_H_
 
+#include "../testScene_xzeng/testLayerZorder/TestLayerZorderScene.h"
+
 #include "UnitTest/UnitTest.h"
 #include "NewRendererTest/NewRendererTest.h"
 #include "ConsoleTest/ConsoleTest.h"

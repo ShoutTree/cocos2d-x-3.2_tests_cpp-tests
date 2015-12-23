@@ -30,6 +30,12 @@ typedef struct _Controller{
 } Controller;
 Controller g_aTestNames[] = {
 
+	{"xzeng_testLayerZorder", [](){return new TestLayerZorderScene();}},
+
+	{"", [](){TestScene* test=NULL; return test;}},
+	{"------------------------------------", [](){TestScene* test=NULL; return test;}},
+	{"", [](){TestScene* test=NULL; return test;}},
+
     //
     // TESTS MUST BE ORDERED ALPHABETICALLY
     //     violators will be prosecuted
@@ -132,11 +138,19 @@ TestController::TestController()
     _itemMenu = Menu::create();
     for (int i = 0; i < g_testCount; ++i)
     {
-        auto label = Label::createWithTTF(ttfConfig, g_aTestNames[i].test_name);       
-        auto menuItem = MenuItemLabel::create(label, CC_CALLBACK_1(TestController::menuCallback, this));
+		auto label = Label::createWithTTF(ttfConfig, g_aTestNames[i].test_name);
+		MenuItemLabel* menuItem;
+		if (g_aTestNames[i].callback)
+		{   
+			menuItem = MenuItemLabel::create(label, CC_CALLBACK_1(TestController::menuCallback, this));
+		}
+		else
+		{
+			menuItem = MenuItemLabel::create(label);
+		}
 
-        _itemMenu->addChild(menuItem, i + 10000);
-        menuItem->setPosition( Vec2( VisibleRect::center().x, (VisibleRect::top().y - (i + 1) * LINE_SPACE) ));
+		_itemMenu->addChild(menuItem, i + 10000);
+		menuItem->setPosition( Vec2( VisibleRect::center().x, (VisibleRect::top().y - (i + 1) * LINE_SPACE) ));
     }
 
     _itemMenu->setContentSize(Size(VisibleRect::getVisibleRect().size.width, (g_testCount + 1) * (LINE_SPACE)));

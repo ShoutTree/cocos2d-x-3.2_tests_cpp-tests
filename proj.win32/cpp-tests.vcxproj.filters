@@ -328,6 +328,12 @@
     <Filter Include="Classes\ExtensionsTest\CocoStudioActionTimelineTest">
       <UniqueIdentifier>{fa88df83-76d7-4f41-ad48-801dafd44889}</UniqueIdentifier>
     </Filter>
+    <Filter Include="testScene_xzeng">
+      <UniqueIdentifier>{dec8f918-0b4f-4770-b442-cc63a13777a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="testScene_xzeng\testLayerZorder">
+      <UniqueIdentifier>{e31ce37c-7df8-416a-812d-aff894e9ede2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -854,6 +860,9 @@
     </ClCompile>
     <ClCompile Include="..\Classes\UITest\CocoStudioGUITest\CocostudioParserTest.cpp">
       <Filter>Classes\UITest\CocostudioGUISceneTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\testScene_xzeng\testLayerZorder\TestLayerZorderScene.cpp">
+      <Filter>testScene_xzeng\testLayerZorder</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1579,6 +1588,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\UITest\CocoStudioGUITest\CocostudioParserTest.h">
       <Filter>Classes\UITest\CocostudioGUISceneTest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\testScene_xzeng\testLayerZorder\TestLayerZorderScene.h">
+      <Filter>testScene_xzeng\testLayerZorder</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
