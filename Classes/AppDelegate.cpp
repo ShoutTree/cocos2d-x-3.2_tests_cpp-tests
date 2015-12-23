@@ -101,7 +101,8 @@ bool AppDelegate::applicationDidFinishLaunching()
         searchPaths.push_back("ccs-res/scenetest/UIComponentTest");
         searchPaths.push_back("ccs-res/scenetest/TriggerTest");
     }
-    
+    searchPaths.push_back("../testResources_xzeng");
+
     fileUtils->setSearchPaths(searchPaths);
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WP8) || (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)

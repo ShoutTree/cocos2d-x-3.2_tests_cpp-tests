@@ -32,8 +32,8 @@ bool TestLayerZorderLayer::init()
 
     // add a "close" icon to exit the progress. it's an autorelease object
     auto closeItem = MenuItemImage::create(
-                                           "test_xzeng/testLayerZorder/CloseNormal.png",
-                                           "test_xzeng/testLayerZorder/CloseSelected.png",
+                                           "testLayerZorder/CloseNormal.png",
+                                           "testLayerZorder/CloseSelected.png",
                                            CC_CALLBACK_1(TestLayerZorderLayer::menuCloseCallback, this));
     
 	closeItem->setPosition(Vec2(origin.x + visibleSize.width - closeItem->getContentSize().width/2 ,
@@ -60,7 +60,7 @@ bool TestLayerZorderLayer::init()
     this->addChild(label, 1);
 
     // add "HelloWorld" splash screen"
-    auto sprite = Sprite::create("test_xzeng/testLayerZorder/HelloWorld.png");
+    auto sprite = Sprite::create("testLayerZorder/HelloWorld.png");
     //auto sprite = Sprite::create("res/ui/noCompressed/angryBar/angryBar.png");
 
     // position the sprite on the center of the screen
@@ -70,10 +70,10 @@ bool TestLayerZorderLayer::init()
     // add the sprite as a child to this layer
     this->addChild(sprite, 0);
 
-	auto sprite_girl = Sprite::create("test_xzeng/testLayerZorder/girl.jpg");
-    auto sprite_monkey = Sprite::create("test_xzeng/testLayerZorder/monkey.png");
-    auto sprite_mouse = Sprite::create("test_xzeng/testLayerZorder/mouse.jpg");
-    auto sprite_picaqiu = Sprite::create("test_xzeng/testLayerZorder/picaqiu.jpg");
+	auto sprite_girl = Sprite::create("testLayerZorder/girl.jpg");
+    auto sprite_monkey = Sprite::create("testLayerZorder/monkey.png");
+    auto sprite_mouse = Sprite::create("testLayerZorder/mouse.jpg");
+    auto sprite_picaqiu = Sprite::create("testLayerZorder/picaqiu.jpg");
 
 	this->addChild(sprite_girl, 1);
 	sprite_girl->addChild(sprite_monkey, -1);
